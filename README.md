@@ -11,9 +11,9 @@
 
 <br>
 
-[![PromptWatch overview](docs/overview-preview.png)](https://gauravpatil97886.github.io/promptwatch/)
+[![PromptWatch overview](docs/overview-preview.png)](https://gauravpatil97886.github.io/PromptWatch/)
 
-<sub>Live overview — <a href="https://gauravpatil97886.github.io/promptwatch/">gauravpatil97886.github.io/promptwatch</a> · source: <a href="docs/overview.html"><code>docs/overview.html</code></a></sub>
+<sub>Live overview — <a href="https://gauravpatil97886.github.io/PromptWatch/">gauravpatil97886.github.io/PromptWatch</a> · source: <a href="docs/overview.html"><code>docs/overview.html</code></a></sub>
 
 </div>
 

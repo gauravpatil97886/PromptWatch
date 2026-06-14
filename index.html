@@ -4,7 +4,58 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PromptWatch — See every prompt your team sends to Claude · Self-hosted AI governance</title>
-<meta name="description" content="PromptWatch is self-hosted AI governance for teams on Claude. Monitor usage, catch leaked secrets, and prove compliance — without an Enterprise plan. Never blocks Claude, never breaks it.">
+<meta name="description" content="PromptWatch is self-hosted monitoring, audit, and AI governance for teams on individual Claude accounts. See every prompt sent to Claude, catch leaked secrets, and prove compliance — without an Enterprise plan. Never blocks Claude, never breaks it.">
+<link rel="canonical" href="https://gauravpatil97886.github.io/PromptWatch/">
+<meta name="author" content="Gaurav Patil">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="Claude monitoring, AI governance, prompt monitoring, LLM observability, DLP, AI compliance, audit log, self-hosted AI, Anthropic, Claude Code, MITRE ATLAS, data loss prevention">
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PromptWatch">
+<meta property="og:title" content="PromptWatch — See every prompt your team sends to Claude">
+<meta property="og:description" content="PromptWatch is self-hosted monitoring, audit, and AI governance for teams on individual Claude accounts. See every prompt sent to Claude, catch leaked secrets, and prove compliance — without an Enterprise plan. Never blocks Claude, never breaks it.">
+<meta property="og:url" content="https://gauravpatil97886.github.io/PromptWatch/">
+<meta property="og:image" content="https://gauravpatil97886.github.io/PromptWatch/overview-preview.png">
+<meta property="og:image:width" content="2560">
+<meta property="og:image:height" content="1520">
+<meta property="og:image:alt" content="PromptWatch overview — live AI governance dashboard">
+<meta property="og:locale" content="en_US">
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PromptWatch — See every prompt your team sends to Claude">
+<meta name="twitter:description" content="PromptWatch is self-hosted monitoring, audit, and AI governance for teams on individual Claude accounts. See every prompt sent to Claude, catch leaked secrets, and prove compliance — without an Enterprise plan. Never blocks Claude, never breaks it.">
+<meta name="twitter:image" content="https://gauravpatil97886.github.io/PromptWatch/overview-preview.png">
+<meta name="twitter:image:alt" content="PromptWatch overview — live AI governance dashboard">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "PromptWatch",
+  "applicationCategory": "SecurityApplication",
+  "operatingSystem": "Linux, macOS, Windows",
+  "description": "PromptWatch is self-hosted monitoring, audit, and AI governance for teams on individual Claude accounts. See every prompt sent to Claude, catch leaked secrets, and prove compliance \u2014 without an Enterprise plan. Never blocks Claude, never breaks it.",
+  "url": "https://gauravpatil97886.github.io/PromptWatch/",
+  "image": "https://gauravpatil97886.github.io/PromptWatch/overview-preview.png",
+  "softwareVersion": "0.1.0",
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "Gaurav Patil",
+    "url": "https://github.com/gauravpatil97886"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "keywords": "Claude monitoring, AI governance, prompt monitoring, LLM observability, DLP, AI compliance, audit log, self-hosted, Anthropic, MITRE ATLAS"
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20role%3D%22img%22%20aria-label%3D%22PromptWatch%20mark%22%3E%0A%20%20%3Crect%20x%3D%221.25%22%20y%3D%221.25%22%20width%3D%2229.5%22%20height%3D%2229.5%22%20rx%3D%227.5%22%20fill%3D%22%2310151F%22%20stroke%3D%22%23212A39%22%20stroke-width%3D%221.5%22%3E%3C/rect%3E%0A%20%20%3Crect%20x%3D%221.25%22%20y%3D%221.25%22%20width%3D%2229.5%22%20height%3D%2229.5%22%20rx%3D%227.5%22%20stroke%3D%22%233D7BFF%22%20stroke-width%3D%221.5%22%20stroke-opacity%3D%220.55%22%3E%3C/rect%3E%0A%20%20%3Cpath%20d%3D%22M6%2016.5H11L13.2%2010L16.4%2022L18.6%2016.5H21%22%20stroke%3D%22%232FD27A%22%20stroke-width%3D%222.1%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3C/path%3E%0A%20%20%3Ccircle%20cx%3D%2223.5%22%20cy%3D%2216.5%22%20r%3D%222.4%22%20fill%3D%22%232FD27A%22%3E%3C/circle%3E%0A%20%20%3Ccircle%20cx%3D%2223.5%22%20cy%3D%2216.5%22%20r%3D%224.6%22%20stroke%3D%22%232FD27A%22%20stroke-width%3D%221.2%22%20stroke-opacity%3D%220.4%22%3E%3C/circle%3E%0A%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20role%3D%22img%22%20aria-label%3D%22PromptWatch%20mark%22%3E%0A%20%20%3Crect%20x%3D%221.25%22%20y%3D%221.25%22%20width%3D%2229.5%22%20height%3D%2229.5%22%20rx%3D%227.5%22%20fill%3D%22%2310151F%22%20stroke%3D%22%23212A39%22%20stroke-width%3D%221.5%22%3E%3C/rect%3E%0A%20%20%3Crect%20x%3D%221.25%22%20y%3D%221.25%22%20width%3D%2229.5%22%20height%3D%2229.5%22%20rx%3D%227.5%22%20stroke%3D%22%233D7BFF%22%20stroke-width%3D%221.5%22%20stroke-opacity%3D%220.55%22%3E%3C/rect%3E%0A%20%20%3Cpath%20d%3D%22M6%2016.5H11L13.2%2010L16.4%2022L18.6%2016.5H21%22%20stroke%3D%22%232FD27A%22%20stroke-width%3D%222.1%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3C/path%3E%0A%20%20%3Ccircle%20cx%3D%2223.5%22%20cy%3D%2216.5%22%20r%3D%222.4%22%20fill%3D%22%232FD27A%22%3E%3C/circle%3E%0A%20%20%3Ccircle%20cx%3D%2223.5%22%20cy%3D%2216.5%22%20r%3D%224.6%22%20stroke%3D%22%232FD27A%22%20stroke-width%3D%221.2%22%20stroke-opacity%3D%220.4%22%3E%3C/circle%3E%0A%3C/svg%3E">
+<meta name="theme-color" content="#0A0E16">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1603,7 +1654,7 @@ function Nav() {
           ))}
         </nav>
         <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 10 }}>
-          <Button variant="ghost" size="sm" iconLeft={<window.IconGitHub size={16} />} href="https://github.com/gauravpatil97886/promptwatch" target="_blank">Self-host</Button>
+          <Button variant="ghost" size="sm" iconLeft={<window.IconGitHub size={16} />} href="https://github.com/gauravpatil97886/PromptWatch" target="_blank">Self-host</Button>
           <Button variant="primary" size="sm" href="#deploy">Get started</Button>
         </div>
       </Container>
@@ -1708,7 +1759,7 @@ function Hero() {
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <Button variant="primary" size="lg" href="#deploy" iconRight={<window.IconArrowRight size={18} />}>Get started</Button>
-              <Button variant="secondary" size="lg" href="https://github.com/gauravpatil97886/promptwatch" target="_blank" iconLeft={<window.IconGitHub size={18} />}>Self-host (GitHub)</Button>
+              <Button variant="secondary" size="lg" href="https://github.com/gauravpatil97886/PromptWatch" target="_blank" iconLeft={<window.IconGitHub size={18} />}>Self-host (GitHub)</Button>
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 18, marginTop: 4 }}>
               {['Monitor-only', 'Fail-open', 'Secrets redacted', 'Apache-2.0'].map((t) => (
@@ -2346,7 +2397,7 @@ function FinalCta() {
           </p>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
             <B2 variant="primary" size="lg" href="#deploy" iconRight={<window.IconArrowRight size={18} />}>Get started</B2>
-            <B2 variant="secondary" size="lg" href="https://github.com/gauravpatil97886/promptwatch" target="_blank" iconLeft={<window.IconGitHub size={18} />}>Star on GitHub</B2>
+            <B2 variant="secondary" size="lg" href="https://github.com/gauravpatil97886/PromptWatch" target="_blank" iconLeft={<window.IconGitHub size={18} />}>Star on GitHub</B2>
           </div>
         </div>
       </Ct>

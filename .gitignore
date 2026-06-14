@@ -25,6 +25,10 @@ htmlcov/
 agent.json
 spool/
 
+# AI assistant / agent context — keep local, do not publish
+CLAUDE.md
+.claude/
+
 # Editors / OS
 .idea/
 .vscode/
