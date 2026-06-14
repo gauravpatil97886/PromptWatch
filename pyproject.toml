@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "promptwatch"
+version = "0.1.0"
+description = "Self-hosted monitoring, audit, and AI-governance for orgs using individual Claude accounts"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.11"
+authors = [{ name = "The PromptWatch Authors" }]
+keywords = ["claude", "anthropic", "monitoring", "audit", "security", "ai-governance", "compliance"]
+# Core deps cover the thin agent + CLI (a local forwarder is a small FastAPI app).
+dependencies = [
+    "fastapi>=0.111.0",
+    "uvicorn[standard]>=0.30.0",
+    "httpx>=0.27.0",
+    "typer>=0.12.0",
+    "rich>=13.7.0",
+    "cryptography>=42.0.0",
+    "python-dotenv>=1.0.0",
+    "pydantic-settings>=2.3.0",
+]
+
+[project.optional-dependencies]
+# `pip install promptwatch[server]` adds the central-collector extras.
+server = [
+    "asyncpg>=0.29.0",          # Postgres backend for org-wide deployment
+]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.5.0",
+    "mypy>=1.10.0",
+]
+
+[project.scripts]
+pw = "promptwatch.cli.main:app"
+promptwatch = "promptwatch.cli.main:app"
+promptwatch-proxy = "promptwatch.agent.forwarder:run"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/promptwatch"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+# E501 long lines (embedded HTML/SQL); E701 compact one-liners in the SSE parser.
+ignore = ["E501", "E701"]
+
+[tool.hatch.envs.default]
+type = "virtual"
+path = ".venv"

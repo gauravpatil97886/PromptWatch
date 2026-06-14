@@ -1,0 +1,26 @@
+# Central PromptWatch server — one command:  docker compose up -d
+#
+# 1. cp .env.example .env  and set PW_DASHBOARD_TOKEN
+# 2. docker compose up -d
+# 3. docker compose logs pw | grep "enroll token"   # hand this to employees
+#
+# Dashboard → http://<host>:9100   (sign in with PW_DASHBOARD_TOKEN)
+# Collector → http://<host>:9090   (agents ship here; per-agent-key auth)
+
+services:
+  pw:
+    build:
+      context: ../..          # repo root (has pyproject.toml + src/)
+      dockerfile: Dockerfile
+    image: promptwatch:latest
+    container_name: pw-server
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9090:9090"   # collector (agents)
+      - "9100:9100"   # dashboard (team)
+    volumes:
+      - pw-data:/data
+
+volumes:
+  pw-data:

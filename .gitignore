@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.env
+
+# Tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# PromptWatch runtime data (never commit prompts, keys, or the local DB)
+.promptwatch/
+*.db
+*.db-wal
+*.db-shm
+.secret.key
+agent.json
+spool/
+
+# Editors / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
