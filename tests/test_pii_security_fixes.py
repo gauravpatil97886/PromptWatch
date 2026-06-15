@@ -1,9 +1,9 @@
 import httpx
 
-from promptwatch.common import compliance
-from promptwatch.common.storage import Store
-from promptwatch.server.collector import build_collector
-from promptwatch.server.server_store import ServerStore
+from promptward.common import compliance
+from promptward.common.storage import Store
+from promptward.server.collector import build_collector
+from promptward.server.server_store import ServerStore
 
 
 def test_pii_redaction_masks_but_keeps_card_last4():
@@ -44,7 +44,7 @@ async def test_collector_redacts_pii_server_side(settings):
 
 
 async def test_admin_rotate_and_erase(settings):
-    from promptwatch.server.dashboard import _app as build_dashboard
+    from promptward.server.dashboard import _app as build_dashboard
     col = build_collector()
     token = ServerStore(settings).rotate_enroll_token()
     async with _client(col) as c:

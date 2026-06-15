@@ -1,4 +1,4 @@
-# Central PromptWatch server — one command:  docker compose up -d
+# Central Promptward server — one command:  docker compose up -d
 #
 # 1. cp .env.example .env  and set PW_DASHBOARD_TOKEN
 # 2. docker compose up -d
@@ -12,7 +12,7 @@ services:
     build:
       context: ../..          # repo root (has pyproject.toml + src/)
       dockerfile: Dockerfile
-    image: promptwatch:latest
+    image: promptward:latest
     container_name: pw-server
     restart: unless-stopped
     env_file: .env

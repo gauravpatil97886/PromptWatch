@@ -1,5 +1,5 @@
 """
-Ship session events to the central PromptWatch collector (optional, fail-open).
+Ship session events to the central Promptward collector (optional, fail-open).
 
 Live sends that fail are written to the on-disk spool and replayed by
 `drain_loop` (started from the forwarder lifespan). The agent forwards to
@@ -69,7 +69,7 @@ async def post_session(
         # local logging continues; we just don't ship unauthenticated.
         if not _warned_no_key:
             logger.warning(
-                "PromptWatch server is configured but no agent key is set; not shipping "
+                "Promptward server is configured but no agent key is set; not shipping "
                 "events. Run `pw enroll` or set PW_AGENT_KEY."
             )
             _warned_no_key = True

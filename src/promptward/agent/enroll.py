@@ -1,8 +1,8 @@
 """
-Enroll this machine's agent with a central PromptWatch collector.
+Enroll this machine's agent with a central Promptward collector.
 
 `pw enroll --server https://pw.corp --token <ORG_ENROLL_TOKEN>` exchanges
-the org enroll token for a per-agent key and writes it to `~/.promptwatch/agent.json`
+the org enroll token for a per-agent key and writes it to `~/.promptward/agent.json`
 (mode 0600). Idempotent: re-running re-enrolls and overwrites the file.
 """
 

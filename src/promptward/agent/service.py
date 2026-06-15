@@ -2,7 +2,7 @@
 Install the agent as an OS service plus a fail-open `claude` wrapper.
 
 - Linux  → systemd **user** unit (`~/.config/systemd/user/pw.service`)
-- macOS  → launchd agent  (`~/Library/LaunchAgents/com.promptwatch.agent.plist`)
+- macOS  → launchd agent  (`~/Library/LaunchAgents/com.promptward.agent.plist`)
 - Wrapper → `~/.local/bin/claude-tracked`: routes Claude through the local agent
   ONLY when the agent's /healthz responds, otherwise runs Claude directly. This
   is what removes the "ANTHROPIC_BASE_URL breaks Claude when the proxy is down" footgun.
@@ -16,16 +16,16 @@ from pathlib import Path
 from ..common.config import get_settings
 
 SYSTEMD_UNIT = Path.home() / ".config/systemd/user/pw.service"
-LAUNCHD_PLIST = Path.home() / "Library/LaunchAgents/com.promptwatch.agent.plist"
+LAUNCHD_PLIST = Path.home() / "Library/LaunchAgents/com.promptward.agent.plist"
 WRAPPER_PATH = Path.home() / ".local/bin/claude-tracked"
 
 
 def _agent_cmd() -> str:
     """Best command to launch the forwarder, preferring an installed console script."""
-    exe = shutil.which("pw") or shutil.which("promptwatch")
+    exe = shutil.which("pw") or shutil.which("promptward")
     if exe:
         return f"{exe} proxy"
-    return f"{sys.executable} -m promptwatch.cli.main proxy"
+    return f"{sys.executable} -m promptward.cli.main proxy"
 
 
 def _write(path: Path, content: str, mode: int = 0o644) -> None:
@@ -38,7 +38,7 @@ def install_wrapper() -> Path:
     s = get_settings()
     url = f"http://{s.proxy_host}:{s.proxy_port}"
     script = f"""#!/usr/bin/env bash
-# PromptWatch fail-open wrapper: route Claude through the local agent only if it is up.
+# Promptward fail-open wrapper: route Claude through the local agent only if it is up.
 AGENT="{url}"
 if curl -fsS --max-time 1 "$AGENT/healthz" >/dev/null 2>&1; then
   export ANTHROPIC_BASE_URL="$AGENT"
@@ -51,7 +51,7 @@ exec claude "$@"
 
 def _install_systemd() -> Path:
     unit = f"""[Unit]
-Description=PromptWatch (forwarder)
+Description=Promptward (forwarder)
 After=network-online.target
 Wants=network-online.target
 
@@ -74,7 +74,7 @@ def _install_launchd() -> Path:
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
   "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0"><dict>
-  <key>Label</key><string>com.promptwatch.agent</string>
+  <key>Label</key><string>com.promptward.agent</string>
   <key>ProgramArguments</key><array>
 {args}  </array>
   <key>RunAtLoad</key><true/>

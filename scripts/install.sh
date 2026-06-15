@@ -3,7 +3,7 @@ set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
-echo "==> Installing PromptWatch..."
+echo "==> Installing Promptward..."
 
 # Require Python 3.11+
 python_bin=$(command -v python3 || command -v python)
@@ -25,13 +25,13 @@ fi
 # Symlink pw into ~/.local/bin
 mkdir -p "$HOME/.local/bin"
 ln -sf "$REPO_DIR/.venv/bin/pw"       "$HOME/.local/bin/pw"
-ln -sf "$REPO_DIR/.venv/bin/promptwatch-proxy" "$HOME/.local/bin/promptwatch-proxy"
+ln -sf "$REPO_DIR/.venv/bin/promptward-proxy" "$HOME/.local/bin/promptward-proxy"
 
 # Create default config dir
-mkdir -p "$HOME/.promptwatch"
-if [ ! -f "$HOME/.promptwatch/.env" ]; then
-    cat > "$HOME/.promptwatch/.env" << 'EOF'
-# PromptWatch — edit to override defaults
+mkdir -p "$HOME/.promptward"
+if [ ! -f "$HOME/.promptward/.env" ]; then
+    cat > "$HOME/.promptward/.env" << 'EOF'
+# Promptward — edit to override defaults
 # PW_PROXY_PORT=9099
 # PW_UPSTREAM_BASE_URL=https://api.anthropic.com
 # PW_ENCRYPT_LOGS=true

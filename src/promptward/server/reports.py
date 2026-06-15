@@ -4,7 +4,7 @@ Compliance reporting + export.
 - `compliance_summary()` aggregates the violation register from stored interactions.
 - `interactions_csv()` exports metadata (no prompt/response by default) for SIEM/audit.
 - `siem_post()` ships events to a webhook (Splunk HEC / generic JSON collector).
-- `FRAMEWORKS` maps PromptWatch controls to common frameworks for the compliance status view.
+- `FRAMEWORKS` maps Promptward controls to common frameworks for the compliance status view.
 """
 
 import csv

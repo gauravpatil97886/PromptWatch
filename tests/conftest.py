@@ -10,8 +10,8 @@ def isolated(tmp_path, monkeypatch):
     monkeypatch.setenv("PW_ENCRYPT_LOGS", "false")
     monkeypatch.setenv("PW_DASHBOARD_TOKEN", "test-token")
     # Redirect agent-side on-disk paths that are resolved at import time.
-    import promptwatch.agent.spool as spool
-    import promptwatch.agent.identity as identity
+    import promptward.agent.spool as spool
+    import promptward.agent.identity as identity
     monkeypatch.setattr(spool, "SPOOL_DIR", tmp_path / "spool")
     monkeypatch.setattr(identity, "AGENT_FILE", tmp_path / "agent.json")
     yield
@@ -19,5 +19,5 @@ def isolated(tmp_path, monkeypatch):
 
 @pytest.fixture
 def settings():
-    from promptwatch.common.config import get_settings
+    from promptward.common.config import get_settings
     return get_settings()

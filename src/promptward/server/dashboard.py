@@ -1,4 +1,4 @@
-"""PromptWatch — Claude Security Monitor  |  Enterprise dashboard."""
+"""Promptward — Claude Security Monitor  |  Enterprise dashboard."""
 
 import logging
 import socket
@@ -15,7 +15,7 @@ from . import auth
 logger = logging.getLogger("pw.dashboard")
 
 _LOGIN_HTML = """<!DOCTYPE html><html><head><meta charset="utf-8">
-<title>PromptWatch — Sign in</title><style>
+<title>Promptward — Sign in</title><style>
 body{background:#0b0e14;color:#e6e6e6;font-family:system-ui,sans-serif;
 display:grid;place-items:center;height:100vh;margin:0}
 .box{background:#141925;padding:32px 36px;border-radius:14px;border:1px solid #232a3a;
@@ -26,7 +26,7 @@ background:#0e1220;color:#fff;box-sizing:border-box;margin-bottom:12px}
 button{width:100%;padding:10px;border:0;border-radius:8px;background:#3b82f6;
 color:#fff;font-weight:600;cursor:pointer}
 </style></head><body><form class="box" action="/login" method="get">
-<h1>PromptWatch</h1><p>Enter the dashboard access token.</p>
+<h1>Promptward</h1><p>Enter the dashboard access token.</p>
 <input name="token" type="password" placeholder="Access token" autofocus>
 <button type="submit">Sign in</button></form></body></html>"""
 
@@ -1221,7 +1221,7 @@ def run(port: int | None = None, open_browser: bool = True, host: str | None = N
     if not auth.is_loopback(bind_host) and not settings.dashboard_token:
         raise SystemExit(
             f"Refusing to bind dashboard to {bind_host} without a token.\n"
-            "Set PW_DASHBOARD_TOKEN (or dashboard_token in ~/.promptwatch/.env) "
+            "Set PW_DASHBOARD_TOKEN (or dashboard_token in ~/.promptward/.env) "
             "before exposing the dashboard beyond localhost."
         )
 

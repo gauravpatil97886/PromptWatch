@@ -1,6 +1,6 @@
-# Contributing to PromptWatch
+# Contributing to Promptward
 
-Thanks for helping improve PromptWatch. This is a security tool, so correctness and privacy come first.
+Thanks for helping improve Promptward. This is a security tool, so correctness and privacy come first.
 
 ## Development setup
 
@@ -14,7 +14,7 @@ ruff check . && mypy src
 ## Project layout
 
 ```
-src/promptwatch/
+src/promptward/
 ├── common/   shared: config, crypto, security rules, redaction, compliance, storage
 ├── agent/    thin per-machine forwarder: forwarder, shipper, spool, enroll, service, notifier
 ├── server/   central: collector, dashboard, auth, prune, audit, reports

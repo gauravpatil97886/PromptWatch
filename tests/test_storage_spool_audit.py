@@ -1,8 +1,8 @@
 import asyncio
 
-from promptwatch.agent import spool
-from promptwatch.common.storage import Store
-from promptwatch.server.audit import AuditLog
+from promptward.agent import spool
+from promptward.common.storage import Store
+from promptward.server.audit import AuditLog
 
 
 def test_store_save_prune_stats(settings):

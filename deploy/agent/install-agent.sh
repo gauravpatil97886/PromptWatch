@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# One-line PromptWatch agent install for employee machines (Linux/macOS).
+# One-line Promptward agent install for employee machines (Linux/macOS).
 #
 #   curl -fsSL https://<server>/install-agent.sh | \
 #     PW_SERVER=https://pw.corp PW_ENROLL_TOKEN=xxxxx bash
@@ -11,9 +11,9 @@ set -euo pipefail
 
 : "${PW_SERVER:?Set PW_SERVER to your collector URL, e.g. https://pw.corp}"
 : "${PW_ENROLL_TOKEN:?Set PW_ENROLL_TOKEN (from your security team)}"
-PW_PACKAGE="${PW_PACKAGE:-promptwatch}"   # or a git URL / local path
+PW_PACKAGE="${PW_PACKAGE:-promptward}"   # or a git URL / local path
 
-echo "==> Installing PromptWatch agent..."
+echo "==> Installing Promptward agent..."
 
 # Prefer pipx (isolated), fall back to pip --user.
 if command -v pipx >/dev/null 2>&1; then

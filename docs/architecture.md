@@ -1,6 +1,6 @@
 # Architecture
 
-PromptWatch has two deployables that share one Python package (`promptwatch`):
+Promptward has two deployables that share one Python package (`promptward`):
 
 | Component | Module(s) | Role |
 |-----------|-----------|------|

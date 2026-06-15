@@ -1,4 +1,4 @@
-# PromptWatch Server — Admin / Security-Team Install
+# Promptward Server — Admin / Security-Team Install
 
 This is the **central** side: the collector (agents ship logs here) + the dashboard and
 admin/compliance panel where the security team **sees monitoring of every machine**. Install
@@ -34,7 +34,7 @@ Open the panel:
 ## No-Docker setup
 
 ```bash
-pipx install "promptwatch[server]"
+pipx install "promptward[server]"
 export PW_DASHBOARD_TOKEN=$(python3 -c "import secrets;print(secrets.token_urlsafe(32))")
 pw server          # prints the enroll token on first run
 ```

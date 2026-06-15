@@ -11,7 +11,7 @@ docker compose logs pw | grep -i "enroll token"   # hand to employees
 
 No Docker:
 ```bash
-pipx install "promptwatch[server]"
+pipx install "promptward[server]"
 PW_DASHBOARD_TOKEN=$(python -c "import secrets;print(secrets.token_urlsafe(32))") pw server
 ```
 
@@ -25,7 +25,7 @@ PW_DASHBOARD_TOKEN=$(python -c "import secrets;print(secrets.token_urlsafe(32))"
 curl -fsSL https://<server>/install-agent.sh | \
   PW_SERVER=https://pw.corp PW_ENROLL_TOKEN=xxxxx bash
 # or manually:
-pipx install promptwatch
+pipx install promptward
 pw enroll --server https://pw.corp --token xxxxx
 systemctl --user enable --now pw.service   # Linux
 ```
@@ -53,6 +53,6 @@ dashboard then point at the same database.
 
 ## Backups
 
-Back up the server's data volume (`/data` in the container, `~/.promptwatch` otherwise):
+Back up the server's data volume (`/data` in the container, `~/.promptward` otherwise):
 `interactions.db*`, `.secret.key` (without it, encrypted rows are unrecoverable), and the
 audit log live there.

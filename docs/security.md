@@ -2,11 +2,11 @@
 
 ## Posture
 
-PromptWatch is **monitor-only and fail-open**. It never blocks a Claude request and never breaks
+Promptward is **monitor-only and fail-open**. It never blocks a Claude request and never breaks
 Claude if the collector is down. It is a visibility/audit layer, not an enforcement gateway —
 a determined user with their own API key can bypass it. Be honest about this with stakeholders.
 
-## Threat model (what PromptWatch defends)
+## Threat model (what Promptward defends)
 
 | Goal | Mechanism |
 |------|-----------|
@@ -29,7 +29,7 @@ a determined user with their own API key can bypass it. Be honest about this wit
 ## Consent & compliance
 
 Monitoring AI usage may carry legal/works-council obligations. The agent installer prints an
-AI-monitoring notice; configure the dashboard consent banner under Admin → Settings. PromptWatch maps its
+AI-monitoring notice; configure the dashboard consent banner under Admin → Settings. Promptward maps its
 controls to EU AI Act, NIST AI RMF, ISO/IEC 42001, SOC 2, and GDPR (see Admin → Compliance).
 
 ## Hardening checklist for org deployment

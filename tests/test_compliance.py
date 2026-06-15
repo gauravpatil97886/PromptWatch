@@ -1,5 +1,5 @@
-from promptwatch.common import compliance as comp
-from promptwatch.common.security import HIGH
+from promptward.common import compliance as comp
+from promptward.common.security import HIGH
 
 
 def test_pii_detection():

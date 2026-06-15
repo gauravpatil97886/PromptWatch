@@ -1,4 +1,4 @@
-from promptwatch.common import redact, security
+from promptward.common import redact, security
 
 
 def test_false_positives_fixed():

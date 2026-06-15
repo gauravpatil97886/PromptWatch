@@ -1,4 +1,4 @@
-"""pw — PromptWatch CLI"""
+"""pw — Promptward CLI"""
 
 import json
 import sys
@@ -13,7 +13,7 @@ from ..common.storage import Store
 
 app = typer.Typer(
     name="pw",
-    help="PromptWatch — monitor, log, and inspect Claude interactions.",
+    help="Promptward — monitor, log, and inspect Claude interactions.",
     add_completion=False,
 )
 console = Console()
@@ -36,7 +36,7 @@ def proxy(
         settings.proxy_port = port  # type: ignore[assignment]
 
     console.print(
-        f"[bold green]PromptWatch proxy[/] → [cyan]http://{settings.proxy_host}:{settings.proxy_port}[/]"
+        f"[bold green]Promptward proxy[/] → [cyan]http://{settings.proxy_host}:{settings.proxy_port}[/]"
         f"  upstream: [dim]{settings.upstream_base_url}[/]"
     )
     console.print(
@@ -55,7 +55,7 @@ def enroll(
     device_name: str = typer.Option(None, help="Friendly device name (default: hostname)"),
     install_service: bool = typer.Option(True, help="Install OS service + fail-open wrapper"),
 ) -> None:
-    """Enroll this agent with a central PromptWatch collector and install its service."""
+    """Enroll this agent with a central Promptward collector and install its service."""
     from ..agent.enroll import enroll as _enroll
     from ..agent import service as _svc
 
@@ -206,7 +206,7 @@ def stats() -> None:
     store = Store(settings)
     s = store.stats()
 
-    console.print("\n[bold]PromptWatch — Stats[/]")
+    console.print("\n[bold]Promptward — Stats[/]")
     console.print(f"  Total interactions : [cyan]{s['total_interactions']}[/]")
     console.print(f"  Devices            : [cyan]{s['total_devices']}[/]")
     console.print(f"  Tokens in          : [yellow]{s['total_tokens_in']:,}[/]")

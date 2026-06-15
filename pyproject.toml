@@ -3,13 +3,13 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "promptwatch"
+name = "promptward"
 version = "0.1.0"
 description = "Self-hosted monitoring, audit, and AI-governance for orgs using individual Claude accounts"
 readme = "README.md"
 license = "Apache-2.0"
 requires-python = ">=3.11"
-authors = [{ name = "The PromptWatch Authors" }]
+authors = [{ name = "The Promptward Authors" }]
 keywords = ["claude", "anthropic", "monitoring", "audit", "security", "ai-governance", "compliance"]
 # Core deps cover the thin agent + CLI (a local forwarder is a small FastAPI app).
 dependencies = [
@@ -24,7 +24,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-# `pip install promptwatch[server]` adds the central-collector extras.
+# `pip install promptward[server]` adds the central-collector extras.
 server = [
     "asyncpg>=0.29.0",          # Postgres backend for org-wide deployment
 ]
@@ -36,12 +36,12 @@ dev = [
 ]
 
 [project.scripts]
-pw = "promptwatch.cli.main:app"
-promptwatch = "promptwatch.cli.main:app"
-promptwatch-proxy = "promptwatch.agent.forwarder:run"
+pw = "promptward.cli.main:app"
+promptward = "promptward.cli.main:app"
+promptward-proxy = "promptward.agent.forwarder:run"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/promptwatch"]
+packages = ["src/promptward"]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

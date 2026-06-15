@@ -1,6 +1,6 @@
 <div align="center">
 
-# PromptWatch
+# Promptward
 
 ### Self-hosted monitoring, audit, and AI governance for teams on individual Claude accounts
 
@@ -11,9 +11,9 @@
 
 <br>
 
-[![PromptWatch overview](docs/overview-preview.png)](https://gauravpatil97886.github.io/PromptWatch/)
+[![Promptward overview](docs/overview-preview.png)](https://gauravpatil97886.github.io/Promptward/)
 
-<sub>Live overview — <a href="https://gauravpatil97886.github.io/PromptWatch/">gauravpatil97886.github.io/PromptWatch</a> · source: <a href="docs/overview.html"><code>docs/overview.html</code></a></sub>
+<sub>Live overview — <a href="https://gauravpatil97886.github.io/Promptward/">gauravpatil97886.github.io/Promptward</a> · source: <a href="docs/overview.html"><code>docs/overview.html</code></a></sub>
 
 </div>
 
@@ -30,21 +30,21 @@ accounts** — every employee signs in with their own personal account and API k
 - **No AI audit trail** — nothing to show a security review or regulator.
 - **No DLP** — secrets, source code, and customer PII pasted into prompts go unnoticed.
 
-**PromptWatch is that missing layer.** It sits on the network path between any Claude tool and
+**Promptward is that missing layer.** It sits on the network path between any Claude tool and
 Anthropic's API — so it works no matter which individual account an employee uses — and gives
 the IT, security, and compliance team one dashboard and admin panel to run it. No Anthropic
 Enterprise plan required.
 
 ## What we built (and how it solves it)
 
-| You need | PromptWatch gives you | How |
+| You need | Promptward gives you | How |
 |----------|-----------------------|-----|
 | See all AI usage | Live dashboard: activity, endpoints, models, tokens, sessions | Thin agent to central collector to dashboard |
 | Catch risky prompts | Threat detection: injection, secrets, exfiltration | `common/security.py` rule engine, server-enforced |
 | Stop data leaks | Secret and PII/PHI/PCI **redaction before storage** | `redact.py` + `compliance.py`, masked at the agent *and* the collector |
 | Prove compliance | Tamper-evident audit log + violation register + framework mapping | `audit.py` hash chain, `reports.py` |
 | Run it safely | Per-agent keys, dashboard token, HTTPS-only credentials, retention | `auth.py`, `identity.require_secure`, `prune.py` |
-| Never break Claude | **Fail-open** — agent forwards to Anthropic regardless of PromptWatch | independent forward path + disk spool |
+| Never break Claude | **Fail-open** — agent forwards to Anthropic regardless of Promptward | independent forward path + disk spool |
 
 ## How it works
 
@@ -72,7 +72,7 @@ Enterprise plan required.
 
 **Key property:** the forward to Anthropic never depends on the server. If the collector or
 network is down, the user's Claude call still succeeds, and the log event spools to disk and
-replays later. PromptWatch can never break Claude.
+replays later. Promptward can never break Claude.
 
 ## Security by layer
 
@@ -136,7 +136,7 @@ then choose `main` and either `/ (root)` or `/docs`.
 ## Project layout
 
 ```
-src/promptwatch/
+src/promptward/
   common/   config, crypto, security, redact, compliance, storage
   agent/    forwarder, shipper, spool, enroll, service, identity, notifier
   server/   collector, dashboard, admin, auth, server_store, audit, reports, prune, app

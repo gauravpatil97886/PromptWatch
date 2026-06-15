@@ -1,8 +1,8 @@
 import httpx
 
-from promptwatch.server.collector import build_collector
-from promptwatch.server.dashboard import _app as build_dashboard
-from promptwatch.server.server_store import ServerStore
+from promptward.server.collector import build_collector
+from promptward.server.dashboard import _app as build_dashboard
+from promptward.server.server_store import ServerStore
 
 
 def _client(app):

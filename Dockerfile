@@ -1,4 +1,4 @@
-# Central PromptWatch server (collector + dashboard). SQLite by default; mount a volume
+# Central Promptward server (collector + dashboard). SQLite by default; mount a volume
 # at /data to persist. For Postgres, set PW_DB_URL (see docs/operations.md).
 FROM python:3.12-slim
 
@@ -8,7 +8,7 @@ COPY src ./src
 
 RUN pip install --no-cache-dir ".[server]"
 
-# Persist DB + keys here (PromptWatch writes under $HOME/.promptwatch).
+# Persist DB + keys here (Promptward writes under $HOME/.promptward).
 ENV HOME=/data
 VOLUME ["/data"]
 

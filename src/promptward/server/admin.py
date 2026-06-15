@@ -116,7 +116,7 @@ def register_admin(app: FastAPI, settings: Settings) -> None:
 
 _ADMIN_HTML = r"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PromptWatch — Admin & Compliance</title><style>
+<title>Promptward — Admin & Compliance</title><style>
 :root{--bg:#0b0e14;--card:#141925;--bd:#232a3a;--mut:#8b95a7;--fg:#e6e6e6;
 --red:#ef4444;--amb:#f59e0b;--blue:#3b82f6;--grn:#22c55e}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
@@ -141,7 +141,7 @@ button.act{background:var(--blue);color:#fff;border:0;border-radius:7px;padding:
 a.act{color:var(--blue)}
 .tab{display:none}.tab.on{display:block}
 </style></head><body>
-<header><h1>🛡 PromptWatch — Admin &amp; Compliance</h1>
+<header><h1>🛡 Promptward — Admin &amp; Compliance</h1>
 <nav>
 <button class="on" onclick="show('compliance',this)">Compliance</button>
 <button onclick="show('agents',this)">Agents</button>

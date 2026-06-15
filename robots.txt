@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gauravpatil97886.github.io/PromptWatch/sitemap.xml
+Sitemap: https://gauravpatil97886.github.io/Promptward/sitemap.xml

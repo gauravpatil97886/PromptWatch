@@ -70,7 +70,7 @@ def _build_app() -> FastAPI:
     @asynccontextmanager
     async def lifespan(_: FastAPI) -> AsyncIterator[None]:
         logger.info(
-            "PromptWatch agent  device=%s  host=%s:%d  upstream=%s",
+            "Promptward agent  device=%s  host=%s:%d  upstream=%s",
             _DEVICE_NAME, settings.proxy_host, settings.proxy_port, settings.upstream_base_url,
         )
         # Background tasks: notification poller + spool drain (both no-op if unenrolled)

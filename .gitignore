@@ -16,8 +16,8 @@ venv/
 .coverage
 htmlcov/
 
-# PromptWatch runtime data (never commit prompts, keys, or the local DB)
-.promptwatch/
+# Promptward runtime data (never commit prompts, keys, or the local DB)
+.promptward/
 *.db
 *.db-wal
 *.db-shm

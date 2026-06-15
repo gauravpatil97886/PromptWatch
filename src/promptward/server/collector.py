@@ -99,7 +99,7 @@ def build_collector() -> FastAPI:
     store = Store(settings)
     sstore = ServerStore(settings)
     sstore.ensure_enroll_token()  # idempotent
-    app = FastAPI(title="PromptWatch Collector")
+    app = FastAPI(title="Promptward Collector")
 
     def _require_agent(key: str | None) -> str:
         agent_id = sstore.verify_agent_key(key or "")
